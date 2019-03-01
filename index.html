@@ -91,6 +91,8 @@
 				</section>
 
 				<section data-markdown data-background="/img/2019/devsummit/bg-7.png">
+					
+					<section data-markdown data-background="/img/2019/devsummit/bg-7.png">
 					<textarea data-template>
 						## PUTTING IT TOGETHER
 						* The symbol 
@@ -101,12 +103,18 @@
 						      width: "0px"
 						    }
 						 });</code></pre>
+						</textarea>
+					</section>
+					<section data-markdown data-background="/img/2019/devsummit/bg-7.png">
+					<textarea data-template>
 						* The polygon 
     						<pre><code>
     						var outerRing = [[90,180],[-90,180],[-90,-180],[90,-180],[90,180]];
     						var innerRing = [[34.8, -115.5],[34.8, -117.5],[32.8,-117.5],[32.8,-115.5],[34.8, -115.5]];
     						var maskPolygon = new Polygon({ rings: [outerRing, innerRing] });
 						  </code></pre>
+					<section data-markdown data-background="/img/2019/devsummit/bg-7.png">
+					<textarea data-template>
     						* The graphic
     						<pre><code>
     						var maskGraphic =  new Graphic({
@@ -115,7 +123,8 @@
 						  });
 						  myMapLayer.add(maskGraphic);
 						  </code></pre>
-					</textarea>
+						</textarea>
+					</section>
 				</section>
 
 
