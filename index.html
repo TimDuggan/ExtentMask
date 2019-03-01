@@ -38,7 +38,7 @@
 						## The problem
 
 						* Displaying an extent is easy
-						* Creating a "mask" color with rbga is easy
+						* Creating a "mask" transparency is easy with layer settings or rgba() colors
 						
 						BUT ... What if I only want the mask on the OUTSIDE of the extent?
 						
@@ -50,29 +50,34 @@
 						## The "donut polygon"
 
 						* The ArcGIS javascript API supports multi-ring polygons
-						* If an inner-ring is order in the opposite direction to the outer ring, it will be treated as a "donut hole"
+						* If an inner-ring is ordered in the opposite direction to the outer ring, it will be treated as a "donut hole" or a "window"
 		
 					</textarea>
 				</section>
 
 				<section data-markdown data-background="img/2019/devsummit/bg-4.png">
 					<textarea data-template>
-						## Using the "donut polygon" to create the masking effect
-
-						* The outer ring is set to the coordinates of the corners of the map's full possible extent in clockwise order (for example, 
-						in WGS84,
-						[[90,180],[-90,180],[-90,-180],[90,-180],[90,180]])
-						* The inner ring is set to corners of the extent to be displayed on the map listed in counter-clockwise order 
-						(for example, using a WGS84 Spatial Reference, 
-						[[34.8, -115.5],[34.8, -117.5],[32.8,-117.5],[32.8,-115.5],[34.8, -115.5]]
+						## Using the "donut polygon" to create the masking effect<br />
+					THE OUTER RING
+						
+						* The outer ring is set to the coordinates
+					of the corners of the map's full possible extent in clockwise order 
+					* for example, 
+						in WGS84, the ring could be
+						[[90,180],[-90,180],[-90,-180],[90,-180],[90,180]]
+					* a better way might be to find the full extent of the basemap's baselayer,<br />which should work regardless of the spatial reference
 					</textarea>
 				</section>
 
 				<section data-markdown data-background="img/2019/devsummit/bg-5.png">
 					<textarea data-template>
-						## Headline Here 5
+						## Using the "donut polygon" to create the masking effect<br />
+					THE INNER RING
 
-						* Bullet [points here](http://hakim.se).
+						* The inner ring represents the corners of the extent (note: it can also be a non-rectangular polygon)
+						* In order be a "window" or "hole", it must list the coordinates in the opposite direction of the outer ring.
+						* for example, 
+						[[34.8, -115.5],[34.8, -117.5],[32.8,-117.5],[32.8,-115.5],[34.8, -115.5]]
 					</textarea>
 				</section>
 
