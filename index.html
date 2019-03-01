@@ -80,31 +80,27 @@
 						## THE FILL COLOR AND SYMBOL
 						* This can be done at the layer level using the opacity property and a solid color for the polygon symbol
 						* It can also be done at the polgyon symbol level using an rgba fill color - for example, 
-						<pre><code>
-						var maskSymbol = new SimpleFillSymbol({
+						<pre><code>var maskSymbol = new SimpleFillSymbol({
 						    color: [0, 0, 0, 0.5],
 						    outline: {
 						      color: [128, 128, 128, 0.5],
 						      width: "0px"
 						    }
-						 });
-						 </code></pre>
+						 });</code></pre>
 					</textarea>
 				</section>
 
 				<section data-markdown data-background="/img/2019/devsummit/bg-7.png">
 					<textarea data-template>
-						## PUTTING IT TOGETHER                             
+						## PUTTING IT TOGETHER                                        
 						* The symbol 
-						<pre><code>
-						var maskSymbol = new SimpleFillSymbol({
+						<pre><code>var maskSymbol = new SimpleFillSymbol({
 						    color: [0, 0, 0, 0.5],
 						    outline: {
 						      color: [128, 128, 128, 0.5],                  
 						      width: "0px"
 						    }
-						 });
-						 </code></pre><!-- .element: class="fragment" -->
+						 });</code></pre><!-- .element: class="fragment" -->
 					</textarea>
 				</section>
 				
@@ -125,13 +121,11 @@
 					<textarea data-template>
 						## PUTTING IT TOGETHER
     						* The graphic
-    						<pre><code>
-    						var maskGraphic =  new Graphic({
+    						<pre><code>var maskGraphic =  new Graphic({
 						    geometry: maskPolygon,
 						    symbol: maskSymbol
 						});
-						myMapLayer.add(maskGraphic);
-						</code></pre><!-- .element: class="fragment" -->
+						myMapLayer.add(maskGraphic);</code></pre><!-- .element: class="fragment" -->
 					</textarea>
 				</section>
 
