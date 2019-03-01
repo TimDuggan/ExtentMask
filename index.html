@@ -57,22 +57,22 @@
 
 				<section data-markdown data-background="img/2019/devsummit/bg-4.png">
 					<textarea data-template>
-						## Using the "donut polygon" to create the masking effect<br />
-					THE OUTER RING
+						## Using the "donut polygon" to create the masking effect
+					##THE OUTER RING
 						
 						* The outer ring is set to the coordinates
 					of the corners of the map's full possible extent in clockwise order 
 					* for example, 
 						in WGS84, the ring could be
 						[[90,180],[-90,180],[-90,-180],[90,-180],[90,180]]
-					* a better way might be to find the full extent of the basemap's baselayer,<br />which should work regardless of the spatial reference
+					* a better way might be to find the full extent of the basemap's baselayer, which should work regardless of the spatial reference
 					</textarea>
 				</section>
 
 				<section data-markdown data-background="img/2019/devsummit/bg-5.png">
 					<textarea data-template>
-						## Using the "donut polygon" to create the masking effect<br />
-					THE INNER RING
+						## Using the "donut polygon" to create the masking effect
+					## THE INNER RING
 
 						* The inner ring represents the corners of the extent (note: it can also be a non-rectangular polygon)
 						* In order be a "window" or "hole", it must list the coordinates in the opposite direction of the outer ring.
