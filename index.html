@@ -30,6 +30,7 @@
 					<h1 style="text-align: left; font-size: 80px;">Creating a "Masked Extent" Effect</h1>
 					<img src="img/PalmSprings.jpg" style="margin: -5px 15px 0 0 ; float:left; padding-right: 5px; width: 30%">
 					<p style="text-align: left; font-size: 30px;">Tim Duggan</p>
+					<p style="text-align: left; font-size: 30px;"><a href="mailto:tduggan@esri.com">tduggan@esri.com</a></p>
 					<p style="text-align: left; font-size: 30px;"><a href="https://github.com/TimDuggan">@TimDuggan</a></p>
     			    <p style="text-align: left; font-size: 30px;">slides: <a href="http://bit.ly/abc123"><code>http://bit.ly/abc123</code></a></p>
 				</section>
@@ -100,24 +101,21 @@
 						      color: [128, 128, 128, 0.5],                  
 						      width: "0px"
 						    }
-						 });</code></pre><!-- .element: class="fragment" -->
+						 });</code></pre>
 					</textarea>
 				</section>
 				
 				<section data-markdown data-background="/img/2019/devsummit/bg-8.png">
-					
 					<textarea data-template>
 						## PUTTING IT TOGETHER
 						* The polygon 
-    						<pre><code>
-    						var outerRing = [[90,180],[-90,180],[-90,-180],[90,-180],[90,180]];
+    						<pre><code>var outerRing = [[90,180],[-90,180],[-90,-180],[90,-180],[90,180]];
     						var innerRing = [[34.8, -115.5],[34.8, -117.5],[32.8,-117.5],[32.8,-115.5],[34.8, -115.5]];
-    						var maskPolygon = new Polygon({ rings: [outerRing, innerRing] });
-						</code></pre><!-- .element: class="fragment" -->
+    						var maskPolygon = new Polygon({ rings: [outerRing, innerRing] });</code></pre>
 					</textarea>
 				</section>
+				
 				<section data-markdown data-background="/img/2019/devsummit/bg-9.png">
-					
 					<textarea data-template>
 						## PUTTING IT TOGETHER
     						* The graphic
@@ -125,7 +123,7 @@
 						    geometry: maskPolygon,
 						    symbol: maskSymbol
 						});
-						myMapLayer.add(maskGraphic);</code></pre><!-- .element: class="fragment" -->
+						myMapLayer.add(maskGraphic);</code></pre>
 					</textarea>
 				</section>
 
