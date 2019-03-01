@@ -102,10 +102,13 @@
 						    }
 						 });</code></pre>
 						* The polygon 
-    <pre><code>var outerRing = [[90,180],[-90,180],[-90,-180],[90,-180],[90,180]];
+    						<pre><code>
+    						var outerRing = [[90,180],[-90,180],[-90,-180],[90,-180],[90,180]];
     						var innerRing = [[34.8, -115.5],[34.8, -117.5],[32.8,-117.5],[32.8,-115.5],[34.8, -115.5]];
     						var maskPolygon = new Polygon({ rings: [outerRing, innerRing] });
+						  </code></pre>
     						* The graphic
+    						<pre><code>
     						var maskGraphic =  new Graphic({
 						    geometry: maskPolygon,
 						    symbol: maskSymbol
