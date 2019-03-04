@@ -72,7 +72,7 @@
 
 						* The inner ring represents the corners of the extent
 						* In order be a "window" or "hole", it must list the coordinates in the opposite direction of the outer ring.
-						* for example, <pre><code>[[-115.5, 34.8],[-117.5, 34.8],[-117.5, 32.8],[-115.5, 32.8],[-115.5, 34.8]]</pre></code>
+						* for example, <pre><code>[[-116.64, 33.76], [-116.37, 33.76], [-116.37, 33.90], [-116.64, 33.90], [-116.64, 33.76]]</pre></code>
 					</textarea>
 				</section>
 
@@ -81,11 +81,11 @@
 						## THE FILL COLOR AND SYMBOL
 						* This can be done at the layer level using the opacity property and a solid color for the polygon symbol
 						* It can also be done at the polgyon symbol level using an rgba fill color - for example, 
-						<pre><code>var maskSymbol = new SimpleFillSymbol({
+						<pre><code>new SimpleFillSymbol({
 						    color: [0, 0, 0, 0.5],
 						    outline: {
-						      color: [128, 128, 128, 0.5],
-						      width: "0px"
+						      color: [0, 0, 0, 1],
+						      width: "2px"
 						    }
 						 });</code></pre>
 					</textarea>
@@ -98,8 +98,8 @@
 						<pre><code>var maskSymbol = new SimpleFillSymbol({
 						    color: [0, 0, 0, 0.5],
 						    outline: {
-						      color: [128, 128, 128, 1],                  
-						      width: "0px"
+						      color: [0, 0, 0, 1],
+						      width: "2px"
 						    }
 						 });</code></pre>
 					</textarea>
@@ -109,8 +109,8 @@
 					<textarea data-template>
 						## PUTTING IT TOGETHER
 						* The polygon 
-    						<pre><code>var outerRing = [[90,180],[-90,180],[-90,-180],[90,-180],[90,180]];
-    						var innerRing = [[34.8, -115.5],[34.8, -117.5],[32.8,-117.5],[32.8,-115.5],[34.8, -115.5]];
+    						<pre><code>var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [-180, 90], [180, 90]];
+    						var innerRing = [[-116.64, 33.76], [-116.37, 33.76], [-116.37, 33.90], [-116.64, 33.90], [-116.64, 33.76]];
     						var maskPolygon = new Polygon({ rings: [outerRing, innerRing] });</code></pre>
 					</textarea>
 				</section>
