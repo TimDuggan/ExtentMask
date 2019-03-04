@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Search Widget - 4.9</title>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 399px;
+  width: 600px;
+  min-width: 600px;
+  max-width: 600px;
+  padding: 0;
+  margin: 0;
+    }
+
+  </style>
+
+  <link rel="stylesheet" href="https://jsdev.arcgis.com/4.10/esri/css/main.css">
+  <script src="https://jsdev.arcgis.com/4.10/"></script>
+
+  <script>
+	require([
+		"esri/Map",
+		"esri/views/MapView",
+		"esri/Graphic",
+		"esri/geometry/Polygon",
+		"esri/geometry/Extent",
+		"esri/symbols/SimpleFillSymbol"
+	], function (
+		Map,
+		MapView,
+		Graphic,
+		Polygon,
+		Extent,
+		SimpleFillSymbol
+	) {
+
+
+		var map = new Map({
+		basemap: "topo"
+		});
+
+		var view = new MapView({
+		container: "viewDiv",
+		map: map
+		});
+
+		var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [-180, 90], [180, 90]];
+		var palmspringsExt = [[-116.6427356737,33.75709903],[-116.3734536237,33.75709903],[-116.3734536237,33.9002301673],[-116.6427356737,33.9002301673],[-116.6427356737,33.75709903]];
+		var maskPoly = new Polygon({ rings: [outerRing, palmspringsExt] });
+    var maskSymbol = new SimpleFillSymbol({
+    color: [0, 0, 0, 0.5],
+    outline: {
+      color: [0, 0, 0, 1],
+      width: "2px"
+    }
+ });
+    var maskGraphic = new Graphic(maskPoly, maskSymbol);
+		view.graphics.add(maskGraphic);
+    var polyForExtent = new Polygon({ rings: palmspringsExt });
+	view.extent = polyForExtent.extent.expand(1.2);
+    });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>
+
