@@ -61,7 +61,7 @@
 						## "donut polygon" THE OUTER RING
 						
 						* The outer ring is set to the coordinates of the corners of the full possible extent of the map in clockwise order 
-						* for example, in WGS84, the ring could be <pre><code>[[90,180],[-90,180],[-90,-180],[90,-180],[90,180]]</code></pre>
+						* for example, in WGS84, the ring could be <pre><code>[[180, 90], [180, -90], [-180, -90], [-180, 90], [-180, 90], [180, 90]]</code></pre>
 						* a better way might be to find the full extent of the basemap's baselayer, which should work regardless of the spatial reference
 					</textarea>
 				</section>
@@ -72,7 +72,7 @@
 
 						* The inner ring represents the corners of the extent
 						* In order be a "window" or "hole", it must list the coordinates in the opposite direction of the outer ring.
-						* for example, <pre><code>[[34.8, -115.5],[34.8, -117.5],[32.8,-117.5],[32.8,-115.5],[34.8, -115.5]]</pre></code>
+						* for example, <pre><code>[[-115.5, 34.8],[-117.5, 34.8],[-117.5, 32.8],[-115.5, 32.8],[-115.5, 34.8]]</pre></code>
 					</textarea>
 				</section>
 
@@ -98,7 +98,7 @@
 						<pre><code>var maskSymbol = new SimpleFillSymbol({
 						    color: [0, 0, 0, 0.5],
 						    outline: {
-						      color: [128, 128, 128, 0.5],                  
+						      color: [128, 128, 128, 1],                  
 						      width: "0px"
 						    }
 						 });</code></pre>
