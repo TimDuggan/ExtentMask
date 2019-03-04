@@ -10,17 +10,9 @@
     html,
     body,
     #viewDiv {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 399px;
-  width: 600px;
-  min-width: 600px;
-  max-width: 600px;
-  padding: 0;
-  margin: 0;
+	height: 100%;
+	width: 100%;
     }
-
   </style>
 
   <link rel="stylesheet" href="https://jsdev.arcgis.com/4.10/esri/css/main.css">
@@ -56,18 +48,18 @@
 		var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [-180, 90], [180, 90]];
 		var palmspringsExt = [[-116.6427356737,33.75709903],[-116.3734536237,33.75709903],[-116.3734536237,33.9002301673],[-116.6427356737,33.9002301673],[-116.6427356737,33.75709903]];
 		var maskPoly = new Polygon({ rings: [outerRing, palmspringsExt] });
-    var maskSymbol = new SimpleFillSymbol({
-    color: [0, 0, 0, 0.5],
-    outline: {
-      color: [0, 0, 0, 1],
-      width: "2px"
-    }
- });
-    var maskGraphic = new Graphic(maskPoly, maskSymbol);
+		var maskSymbol = new SimpleFillSymbol({
+		    color: [0, 0, 0, 0.5],
+		    outline: {
+		      color: [0, 0, 0, 1],
+		      width: "2px"
+		    }
+		});
+		var maskGraphic = new Graphic(maskPoly, maskSymbol);
 		view.graphics.add(maskGraphic);
-    var polyForExtent = new Polygon({ rings: palmspringsExt });
-	view.extent = polyForExtent.extent.expand(1.2);
-    });
+		var polyForExtent = new Polygon({ rings: palmspringsExt });
+		view.extent = polyForExtent.extent.expand(1.2);
+	});
   </script>
 </head>
 
