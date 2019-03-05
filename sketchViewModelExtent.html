@@ -99,7 +99,10 @@
 			if (shape.type === "polygon") {
 				innerRing = shape.rings.reverse();
 			} else if (shape.type === "extent") {
-				innerRing = new Polygon.fromExtent(shape).rings.reverse();
+				console.log(new Polygon.fromExtent(shape));
+				var newP = new Polygon.fromExtent(shape);
+				innerRing = newP.rings.reverse();
+				console.log(innerRing);
 			}
 			if (!innerRing) return false;
 			console.log(innerRing);
