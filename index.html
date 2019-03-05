@@ -134,12 +134,40 @@
 					</textarea>
 				</section>
 				
+				
 				<section data-markdown data-background="/img/2019/devsummit/bg-11.png">
 					<textarea data-template>
 						## ANOTHER USE CASE
 						* Because we are creating a two ring polygon, the inner ring can also be based on a polygon
 						
 						<a href="https://timduggan.github.io/ExtentMask/iowa.html" target="_blank"><img src="http://TimDuggan.github.com/ExtentMask/img/iowa.JPG" /></a>
+					</textarea>
+				</section>	
+				
+								
+				<section data-markdown data-background="/img/2019/devsummit/bg-12.png">
+					<textarea data-template>
+						## MAKE IT DYNAMIC WITH A FUNCTION OR A CLASS
+						<pre><code>
+							function getMask(shape) {
+								if (shape.type === "undefined") return false;
+								var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [180, 90]];
+								var innerRing;
+								if (shape.type === "polygon") {
+									innerRing = shape.rings.reverse();
+								} else if (shape.type === "extent") {
+									var newP = new Polygon.fromExtent(shape);
+									innerRing = newP.rings.reverse();
+								}
+								if (!innerRing) return false;
+								console.log(outerRing);
+								console.log(innerRing[0]);
+								var rings = [outerRing, innerRing[0]];
+								var maskPoly = new Polygon({ rings: rings });
+								var maskGraphic = new Graphic(maskPoly, maskSymbol);
+								return maskGraphic;
+							}
+						</code></pre>
 					</textarea>
 				</section>
 
