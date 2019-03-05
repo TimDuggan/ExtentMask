@@ -88,7 +88,7 @@
                   toggleToolOnClick: false
         });
 
-	var maskGraphic = getMask(polyForExtent.extent);
+		var maskGraphic = getMask(polyForExtent.extent);
 		console.log(maskGraphic);
         maskLayer.add(maskGraphic);
 
@@ -113,6 +113,8 @@
 				innerRing = newP.rings.reverse();
 			}
 			if (!innerRing) return false;
+			console.log(outerRing);
+			console.log(innerRing[0]);
 			var rings = [outerRing, innerRing[0]];
 			var maskPoly = new Polygon({ rings: rings });
 			var maskGraphic = new Graphic(maskPoly, maskSymbol);
