@@ -79,11 +79,7 @@
 		var polyForExtent = new Polygon({ rings: palmspringsExt });
 
 		graphicsLayer.add(
-			new Graphic(polyForExtent.extent,polygonSymbol)], {
-                  tool: "transform",
-                  enableRotation: false,
-                  toggleToolOnClick: false
-			})
+			new Graphic(polyForExtent.extent,polygonSymbol)
         );
         sketchViewModel.update([new Graphic(polyForExtent.extent,polygonSymbol)], {
                   tool: "transform",
