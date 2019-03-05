@@ -100,11 +100,11 @@
 			var innerRing;
 			console.log(shape.type);
 			if (shape.type === "polygon") {
-				innerRing = shape.rings.reverse();
+				innerRing = [shape.rings[0].reverse()];
 			} else if (shape.type === "extent") {
 				console.log(new Polygon.fromExtent(shape));
 				var newP = new Polygon.fromExtent(shape);
-				innerRing = newP.rings;
+				innerRing = [newP.rings.reverse()];
 				console.log(innerRing);
 			}
 			if (!innerRing) return false;
