@@ -104,7 +104,7 @@
 			} else if (shape.type === "extent") {
 				console.log(new Polygon.fromExtent(shape));
 				var newP = new Polygon.fromExtent(shape);
-				innerRing = newP.rings.reverse();
+				innerRing = newP.rings;
 				console.log(innerRing);
 			}
 			if (!innerRing) return false;
@@ -117,6 +117,7 @@
 				  width: "2px"
 				}
 			});
+			console.log(maskPoly);
 			var maskGraphic = new Graphic(maskPoly, maskSymbol);
 			return maskGraphic;
 		}
