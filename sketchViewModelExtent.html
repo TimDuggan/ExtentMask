@@ -50,9 +50,9 @@
 		});
 
 		var maskLayer = new GraphicsLayer({ id: "myMask" });
-		var featureLayer = new GraphicsLayer({ id: "myFeatures" });
+		var graphicsLayer = new GraphicsLayer({ id: "myFeatures" });
 		map.add(maskLayer);
-		map.add(featureLayer);
+		map.add(graphicsLayer);
 
 		// make our polygon symbol completely transparent and let the mask to the visual work
 		var polygonSymbol = new SimpleFillSymbol({
@@ -65,7 +65,7 @@
 
 		var sketchViewModel = new SketchViewModel({
 		  updateOnGraphicClick: true,
-		  layer: featureLayer,
+		  layer: graphicsLayer,
 		  view: view,
 		  updatePolygonSymbol: polygonSymbol,
 		  polygonSymbol: polygonSymbol
