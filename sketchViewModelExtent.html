@@ -92,6 +92,7 @@
 
 
 		function getMask(shape) {
+			console.log(shape);
 			if (shape.type === "undefined") return false;
 			var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [-180, 90], [180, 90]];
 			var innerRing;
