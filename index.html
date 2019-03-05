@@ -148,23 +148,23 @@
 					<textarea data-template>
 				## MAKING THE MASK DYNAMIC
 
-<pre><code>
-function getMaskGraphic(ext) {
-	if (shape.type !== "extent") return false;
-	var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [-180, 90], [180, 90]];
-	var innerRing = [[ext.xmax, ext.ymax], [ext.xmin, ext.ymax], [ext.xmin, ext.ymin], [ext.xmax, ext.ymin], [ext.xmax, ext.ymax]];
-	var maskPoly = new Polygon({ rings: [outerRing, innerRing] });
-	var maskSymbol = new SimpleFillSymbol({
-		color: [0, 0, 0, 0.5],
-		outline: {
-		  color: [0, 0, 0, 1],
-		  width: "2px"
-		}
-	});
-	var maskGraphic = new Graphic(maskPoly, maskSymbol);
-	return maskGraphic;
-}
-</code></pre>
+				<pre><code>
+				function getMaskGraphic(ext) {
+					if (shape.type !== "extent") return false;
+					var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [-180, 90], [180, 90]];
+					var innerRing = [[ext.xmax, ext.ymax], [ext.xmin, ext.ymax], [ext.xmin, ext.ymin], [ext.xmax, ext.ymin], [ext.xmax, ext.ymax]];
+					var maskPoly = new Polygon({ rings: [outerRing, innerRing] });
+					var maskSymbol = new SimpleFillSymbol({
+						color: [0, 0, 0, 0.5],
+						outline: {
+						  color: [0, 0, 0, 1],
+						  width: "2px"
+						}
+					});
+					var maskGraphic = new Graphic(maskPoly, maskSymbol);
+					return maskGraphic;
+				}
+				</code></pre>
 					</textarea>
 				</section>
 
@@ -190,6 +190,8 @@ To view, login to ArcGIS Online &rarr; Click Content &rarr; Select Any Item &rar
 
 					</textarea>
 				</section>
+				
+				<section data-markdown></section>
 				
 
 				<!-- SURVEY SLIDE: -->
