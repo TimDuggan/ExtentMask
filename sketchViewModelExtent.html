@@ -85,7 +85,7 @@
                   tool: "transform",
                   enableRotation: false,
                   toggleToolOnClick: false
-                });
+        });
         maskLayer.add(getMask(polyForExtent.extent))
 
 		view.extent = polyForExtent.extent.expand(1.2);
@@ -104,7 +104,7 @@
 			} else if (shape.type === "extent") {
 				console.log(new Polygon.fromExtent(shape));
 				var newP = new Polygon.fromExtent(shape);
-				innerRing = [newP.rings.reverse()];
+				innerRing = [newP.rings[0].reverse()];
 				console.log(innerRing);
 			}
 			if (!innerRing) return false;
