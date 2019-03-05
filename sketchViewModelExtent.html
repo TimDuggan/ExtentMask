@@ -69,10 +69,10 @@
 		  view: view,
 		  updatePolygonSymbol: polygonSymbol,
 		  polygonSymbol: polygonSymbol
-    		});
+    	});
 
 
-       		sketchViewModel.create("rectangle");
+        this.sketchViewModel.create("rectangle");
 
 
 		var palmspringsExt = [[-116.6427356737,33.75709903],[-116.3734536237,33.75709903],[-116.3734536237,33.9002301673],[-116.6427356737,33.9002301673],[-116.6427356737,33.75709903]];
@@ -81,17 +81,16 @@
 
 		graphicsLayer.add(
 			new Graphic(polyForExtent.extent,polygonSymbol)
-        	);
-        
-		sketchViewModel.update([new Graphic(polyForExtent.extent,polygonSymbol)], {
+        );
+        sketchViewModel.update([new Graphic(polyForExtent.extent,polygonSymbol)], {
                   tool: "transform",
                   enableRotation: false,
                   toggleToolOnClick: false
-        	});
+        });
 
-		var maskGraphic = getMask(polyForExtent.extent);
+	var maskGraphic = getMask(polyForExtent.extent);
 		console.log(maskGraphic);
-        	maskLayer.add(maskGraphic);
+        maskLayer.add(maskGraphic);
 
 		view.extent = polyForExtent.extent.expand(1.2);
 
@@ -102,10 +101,10 @@
 			  width: "2px"
 			}
 		});
-		var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [180, 90]];
-		
+
 		function getMask(shape) {
 			if (shape.type === "undefined") return false;
+			var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [180, 90]];
 			var innerRing;
 			if (shape.type === "polygon") {
 				innerRing = shape.rings.reverse();
@@ -114,7 +113,8 @@
 				innerRing = newP.rings.reverse();
 			}
 			if (!innerRing) return false;
-			var maskPoly = new Polygon({ rings: [outerRing, innerRing[0]] });
+			var rings = [outerRing, innerRing[0]];
+			var maskPoly = new Polygon({ rings: rings });
 			var maskGraphic = new Graphic(maskPoly, maskSymbol);
 			return maskGraphic;
 		}
