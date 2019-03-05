@@ -86,7 +86,7 @@
                   enableRotation: false,
                   toggleToolOnClick: false
         });
-		
+
 	var maskGraphic = getMask(polyForExtent.extent);
 		console.log(maskGraphic);
         maskLayer.add(maskGraphic);
@@ -96,7 +96,7 @@
 
 		function getMask(shape) {
 			console.log(shape);
-			
+
 			console.log(shape.type);
 			if (shape.type === "undefined") return false;
 			var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [180, 90]];
@@ -112,7 +112,9 @@
 			}
 			if (!innerRing) return false;
 			console.log(innerRing);
-			var maskPoly = new Polygon({ rings: [outerRing, innerRing] });
+			var rings = [outerRing, innerRing];
+			console.log(rings);
+			var maskPoly = new Polygon({ rings: rings });
 			var maskSymbol = new SimpleFillSymbol({
 				color: [0, 0, 0, 0.5],
 				outline: {
