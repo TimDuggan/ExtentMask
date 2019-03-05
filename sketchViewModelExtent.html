@@ -86,7 +86,10 @@
                   enableRotation: false,
                   toggleToolOnClick: false
         });
-        maskLayer.add(getMask(polyForExtent.extent))
+		
+	var maskGraphic = getMask(polyForExtent.extent);
+		console.log(maskGrapic);
+        maskLayer.add(maskGraphic);
 
 		view.extent = polyForExtent.extent.expand(1.2);
 
