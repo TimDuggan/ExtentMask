@@ -93,9 +93,12 @@
 
 		function getMask(shape) {
 			console.log(shape);
+			
+			console.log(shape.type);
 			if (shape.type === "undefined") return false;
 			var outerRing = [[180, 90], [180, -90], [-180, -90], [-180, 90], [-180, 90], [180, 90]];
 			var innerRing;
+			console.log(shape.type);
 			if (shape.type === "polygon") {
 				innerRing = shape.rings.reverse();
 			} else if (shape.type === "extent") {
