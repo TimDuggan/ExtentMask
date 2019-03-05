@@ -112,7 +112,7 @@
 			}
 			if (!innerRing) return false;
 			console.log(innerRing);
-			var rings = [outerRing, [innerRing]];
+			var rings = [outerRing, innerRing];
 			console.log(rings);
 			var maskPoly = new Polygon({ rings: rings });
 			var maskSymbol = new SimpleFillSymbol({
