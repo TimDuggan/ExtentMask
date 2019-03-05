@@ -83,6 +83,7 @@
                   enableRotation: false,
                   toggleToolOnClick: false
                 });
+        maskLayer.add(getMask(polyForExtent.extent))
 
 		view.extent = polyForExtent.extent.expand(1.2);
 
