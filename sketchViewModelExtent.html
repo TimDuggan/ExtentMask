@@ -26,7 +26,7 @@
 		"esri/geometry/Polygon",
 		"esri/geometry/Extent",
 		"esri/symbols/SimpleFillSymbol",
-		"esri/layers/FeatureLayer",
+		"esri/layers/GraphicsLayer",
 		"esri/widgets/Sketch/SketchViewModel"
 	], function (
 		Map,
@@ -35,7 +35,7 @@
 		Polygon,
 		Extent,
 		SimpleFillSymbol,
-		FeatureLayer,
+		GraphicsLayer,
 		SketchViewModel
 	) {
 
@@ -49,8 +49,8 @@
 			map: map
 		});
 
-		var maskLayer = new FeatureLayer({ id: "myMask" });
-		var featureLayer = new FeatureLayer({ id: "myFeatures" });
+		var maskLayer = new GraphicsLayer({ id: "myMask" });
+		var featureLayer = new GraphicsLayer({ id: "myFeatures" });
 		map.add(maskLayer);
 		map.add(featureLayer);
 
